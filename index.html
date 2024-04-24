@@ -7,11 +7,10 @@
     <title>Leo's Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 0;
             padding: 0;
             height: 100vh;
-            color: #333;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -32,7 +31,6 @@
             padding-top: 20px;
             overflow: auto;
             width: 100%;
-            height: 100%;
             overflow: auto;
             background: linear-gradient(90deg, #2a414c 20%, #4e7970 30%, #4e7970 50%);
         }
@@ -46,12 +44,27 @@
         .work-sections {
             display: flex;
             transition: transform 0.5s ease;
+
         }
 
         .work-section {
             flex: 0 0 90%;
             margin: 0 5%;
-            overflow: hidden;
+            overflow: auto;
+            display: flex;
+            max-height: 55vh;
+        }
+
+        .work-section-snapshot,
+        .work-section-detail {
+            flex: 1;
+            margin: 0 5%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-section-detail p {
+            color: #ffffff
         }
 
         main a {
@@ -71,13 +84,14 @@
         }
 
         img {
-            width: 45%;
+            width: 100%;
             height: auto;
         }
 
         .controls,
         .dot-controls {
             margin-top: 20px;
+            display: block;
         }
 
         button {
@@ -112,9 +126,9 @@
         }
 
         @media (max-width: 768px) {
-            img {
-                width: 90%;
-                height: auto;
+            .work-section {
+                display: flex;
+                flex-direction: column;
             }
         }
     </style>
@@ -148,20 +162,54 @@
             <div class="work-sections">
                 <!-- Work Sections -->
                 <div class="work-section">
-                    <img src="assets/Jobapplication.png" alt="Job Application Platform">
-                    <a href="https://jobapplicationweb.azurewebsites.net/" target="_blank">View Online</a>
-                    <a href="https://github.com/Leo-Ma0502/Simplified-job-application-platform"
-                        target="_blank">Github</a>
+                    <div class="work-section-snapshot"><img src="assets/Jobapplication.png"
+                            alt="Job Application Platform">
+                        <a href="https://jobapplicationweb.azurewebsites.net/" target="_blank">View Online</a>
+                        <a href="https://github.com/Leo-Ma0502/Simplified-job-application-platform"
+                            target="_blank">Github</a>
+                    </div>
+                    <div class="work-section-detail">
+                        <p>A simplified job application platform. Users can browse and search for job listings, and
+                            apply through email after logging in.</p>
+                        <p>Backend: ASP .NET Core</p>
+                        <p>Frontend: React</p>
+                        <p>Database: SQL Server, Azure SQL</p>
+                        <p>Deployment: Azure</p>
+                        <p>CI/CD: Github Actions</p>
+                        <p>Hardest problem: to render different data based on page state</p>
+                        <p>Impact: Streamlined and simplified the job application process</p>
+                    </div>
                 </div>
                 <div class="work-section">
-                    <img src="https://github.com/Leo-Ma0502/Chinese-Chess/raw/main/About/Screenshots/Web.png"
-                        alt="Chinese Chess Game">
-                    <a href="https://github.com/Leo-Ma0502/Chinese-Chess" target="_blank">Github</a>
+                    <div class="work-section-snapshot">
+                        <img src="https://github.com/Leo-Ma0502/Chinese-Chess/raw/main/About/Screenshots/Web.png"
+                            alt="Chinese Chess Game">
+                        <a href="https://github.com/Leo-Ma0502/Chinese-Chess" target="_blank">Github</a>
+                    </div>
+                    <div class="work-section-detail">
+                        <p>A multi-player chess game. Players can be paired up and play the chess game as a group of 2.
+                        </p>
+                        <p>Backend: ASP .NET Core</p>
+                        <p>Frontend: JavaScript, CSS, HTML</p>
+                        <p>Database: SQL Server, Azure SQL</p>
+                        <p>Hardest problem: Pair up users and record the game status in the backend server</p>
+                        <p>Impact: Created a reliable game experience</p>
+                    </div>
                 </div>
                 <div class="work-section">
-                    <img src="https://github.com/Leo-Ma0502/File-Download-Solution-With-Cache/raw/GUI/About/Screenshot/screenshot.PNG"
-                        alt="File Download">
-                    <a href="https://github.com/Leo-Ma0502/File-Download-Solution-With-Cache" target="_blank">Github</a>
+                    <div class="work-section-snapshot">
+                        <img src="https://github.com/Leo-Ma0502/File-Download-Solution-With-Cache/raw/GUI/About/Screenshot/screenshot.PNG"
+                            alt="File Download">
+                        <a href="https://github.com/Leo-Ma0502/File-Download-Solution-With-Cache"
+                            target="_blank">Github</a>
+                    </div>
+                    <div class="work-section-detail">
+                        <p>A file download solution with a cache server.
+                        </p>
+                        <p>.NET & Windows Forms</p>
+                        <p>Hardest problem: Organise the byte flow among the client, origin server, and cache server</p>
+                        <p>Impact: Created a bandwidth-efficient file download workflow</p>
+                    </div>
                 </div>
             </div>
         </div>
